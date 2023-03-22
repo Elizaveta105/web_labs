@@ -1,0 +1,26 @@
+body {
+    background-color: pink;
+    color: maroon;
+    font-family: Arial;
+    margin: 0px;
+}
+
+header {
+    background-color: rgb(176, 83, 120);
+    color: white;
+    padding: 5px;
+    font-size: 16pt;
+}
+
+footer {
+    background-color: rgb(176, 83, 120);
+    color: white;
+    padding: 5px;
+    font-size: 14pt;
+    text-align: right;
+}
+
+a {
+    color: green;
+    text-decoration: none;
+}
