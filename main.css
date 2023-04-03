@@ -10,10 +10,17 @@ header {
     color: white;
     padding: 5px;
     font-size: 16pt;
+    transition: 600ms 2s;
 }
 
 header:hover{
-    
+    font-size: xx-large;
+    transition: 700ms 0.1s;
+}
+
+header:active{
+    color: blueviolet;
+    transition: 500ms 0.1s;
 }
 
 footer {
@@ -22,6 +29,17 @@ footer {
     padding: 5px;
     font-size: 14pt;
     text-align: right;
+    transition: 600ms 2s;
+}
+
+footer:hover{
+    font-size:x-large;
+    transition: 700 0.1s;
+}
+
+footer:active{
+    color: yellow;
+    transition: 500ms 0.1s;
 }
 
 a {
