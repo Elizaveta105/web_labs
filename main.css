@@ -12,6 +12,10 @@ header {
     font-size: 16pt;
 }
 
+header:hover{
+    
+}
+
 footer {
     background: linear-gradient(to right, red, orange, yellow, green, lightblue, blue, violet);
     color: white;
@@ -23,6 +27,7 @@ footer {
 a {
     color: green;
     text-decoration: none;
+    transition: 500ms 1s;
 }
 
 a:visited{
@@ -35,6 +40,8 @@ a:hover{
     text-decoration: underline;
     background-color: white;
     font-weight: bold;
+    text-shadow: 0px 0px 10px rgb(184, 109, 109);
+    transition: 300ms 0.1s;
 }
 
 a:active{
