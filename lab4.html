@@ -14,10 +14,26 @@
             border-radius: 7px;
             padding: 7px;
             width: 500px;
-            height: 250px;
+            height: 120px;
             overflow-y: auto;
             overflow-x: hidden;
+            position: relative;
+            background: linear-gradient(45deg, #c1f9ff, rgb(156 111 233));
+            z-index: 2;
         }
+        
+        .second {
+            z-index: 1;
+            left: 380px;
+            top: 120px;
+            position: fixed;
+        }
+
+        .second:hover {
+            transition: 300ms;
+            z-index: 3;
+        }
+
     </style>
 </head>
 <body>
@@ -37,7 +53,7 @@
             на продажу и никто не хочет их покупать ни за 180, ни за 150, ни даже за 100 тысяч.
         </div>
 
-        <div>
+        <div class="second">
             А всё потому, что за пару лет до этого в банках скопилось настолько много денег, что они вообще 
             перестали проверять надёжность заёмщиков – а зачем? Недвига-то всё время дорожает! Не заплатит – быстренько 
             загоним по круглой цене.
