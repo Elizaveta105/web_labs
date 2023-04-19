@@ -52,9 +52,16 @@
             let autor = 'Добро пожаловать!\n\nАвтор страницы:\nЯкунина Елизавета Владимировна';
             alert (autor);
         }
-    </script>
 
-</head>
+        function changeOutput(buttonNum, backColor, textColor, borderStyle, borderWidth) {
+            let output = document.getElementById ('output');
+            output.innerHTML = 'Нажата кнопка ' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.borderBlockStyle = borderStyle;
+            output.style.borderWidth = borderWidth;
+        }
+    </script>
 
     <style>
         .message {
@@ -68,9 +75,17 @@
             padding: 10px;
             border-radius: 20px;
             border-color: rgb(7, 65, 7);
-            border-style: dashed;
+            border-style:dashed;
+        }
+
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
         }
     </style>
+</head>
+
 <body>
     <header onclick="showAutor()">
         НГТУ, ФБ, Лабораторная работа 5
@@ -82,8 +97,17 @@
         <div class="message" onclick="showSum()"><b>Найти сумму чисел</b></div>
         <div class="message" onclick="showRazn()"><b>Найти разность чисел</b></div>
         <div class="message" onclick="showPr()"><b>Найти произведение</b></div>
-        <div class="message" onclick="showDel()"><b>Найти деление</b></div>
+        <div class="message" onclick="showDel()"><b>Найти результат деления</b></div>
         <div class="message" onclick="showAutor()"><b>Узнать, кто автор страницы</b></div>
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow', 'dotted', '7px')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'orange', 'black', 'solid', '3px')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'green', 'white', 'double', '5px')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'lightblue', 'blue', 'dashed', '3px')">
+        </div>
+
+        <div id="output"></div>
     </main>
 
     <footer onclick="showAutor()">
