@@ -13,6 +13,10 @@ header {
     transition: 600ms 2s;
 }
 
+main {
+    margin: 10px 20px;
+}
+
 header:hover{
     font-size: xx-large;
     transition: 700ms 0.1s;
