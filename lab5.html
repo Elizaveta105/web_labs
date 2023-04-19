@@ -14,6 +14,11 @@
             let result = a + b;
             alert('Сумма ' + a + ' и ' + b + ' равна ' + result);
         }
+
+        function showAutor() {
+            let autor = 'Автор страницы:\nЯкунина Елизавета Владимировна\n\nДобро пожаловать!';
+            alert (autor);
+        }
     </script>
 
 </head>
@@ -34,16 +39,16 @@
         }
     </style>
 <body>
-    <header>
+    <header onclick="showAutor()">
         НГТУ, ФБ, Лабораторная работа 5
     </header>
 
     <main>
         <div class="message" onclick="showSum()"><b>Сколько будет 5154+7891?</b></div>
-        <div class="message"><b>Узнать, кто автор страницы</b></div>
+        <div class="message" onclick="showAutor()"><b>Узнать, кто автор страницы</b></div>
     </main>
 
-    <footer>
+    <footer onclick="showAutor()">
         &copy; Елизавета Якунина, ФБИ-14, 2 курс, 2023
     </footer>
 
