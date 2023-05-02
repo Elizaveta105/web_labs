@@ -61,6 +61,29 @@
             output.style.borderBlockStyle = borderStyle;
             output.style.borderWidth = borderWidth;
         }
+
+        function korzina() {
+            let input1 = document.getElementById('n1')
+            let input2 = document.getElementById('n2')
+            let input3 = document.getElementById('n3')
+            let input4 = document.getElementById('n4')
+            let input5 = document.getElementById('n5')
+
+            let ananas = parseInt(input1.value);
+            let milka = parseInt(input2.value);
+            let abr = parseInt(input3.value);
+            let sok = parseInt(input4.value);
+            let arbuz = parseInt(input5.value);
+
+            let itog = (ananas*120)+(milka*80)+(abr*45)+(sok*90)+(arbuz*500);
+            let output1 = document.getElementById('output1')
+            output1.innerHTML = 'Общая цена: ' + itog + ' p.';
+        }
+
+        function krug_nazhat(element) {
+            /* Изменила функцию для добавления класса 'nazhat' */
+            element.classList.add('nazhat'); 
+        }
     </script>
 
     <style>
@@ -83,6 +106,55 @@
             width: 300px;
             height: 40px;
         }
+
+        .korzina {
+            border: 2px solid;
+            width: 380px;
+            height: 470px;
+            border-radius: 15px;
+            border-color: rgb(13, 13, 108);
+            padding: 10px;
+            color: blue;
+            text-align: justify;
+            background-color: rgba(0, 255, 119, 0.66);
+        }
+
+        .krugi {
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            border: 3px solid;
+            border-color:  rgb(13, 13, 108);
+            border-radius: 50%;
+            margin-right: 10px;
+            line-height: 100px;
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer; 
+            display: inline-block;
+            position: relative;
+            opacity: 100%;
+        }
+
+        .krugi.nazhat {
+            opacity: 0; /* Сделала элемент прозрачным */
+            pointer-events: none; /* Отключила обработку событий мыши */
+            /* "Это свойство позволяет элементу не являться объектом события мыши, значение none сообщает
+            событию мыши проходить "через" элемент и обращаться к элементу, находящемуся "под" ним. */
+        }
+
+        .krugi1 {background-color: #6c1414;}
+        .krugi2 {background-color: rgb(20, 129, 20)}
+        .krugi3 {background-color: rgb(48, 48, 107)}
+        .krugi4 {background-color: rgb(217, 217, 38)}
+        .krugi5 {background-color: purple}
+        .krugi6 {background-color: rosybrown}
+        .krugi7 {background-color: rgb(12, 71, 14)}
+        .krugi8 {background-color: #005eff;}
+        .krugi9 {background-color: peru}
+        .krugi10 {background-color: firebrick}
+
     </style>
 </head>
 
@@ -92,24 +164,76 @@
     </header>
 
     <main>
-        <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
-        <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
+
+<!-- Сделала кнопки для всех арифметических операций и имени автора -->
+
+        <label>Первое число: &nbsp;<input type="number" value="" id="numberA"></label><br>
+        <br>
+        <label>Второе число: &ensp;<input type="number" value="" id="numberB"></label><br>
+        <br>
         <div class="message" onclick="showSum()"><b>Найти сумму чисел</b></div>
         <div class="message" onclick="showRazn()"><b>Найти разность чисел</b></div>
         <div class="message" onclick="showPr()"><b>Найти произведение</b></div>
         <div class="message" onclick="showDel()"><b>Найти результат деления</b></div>
         <div class="message" onclick="showAutor()"><b>Узнать, кто автор страницы</b></div>
 
+<!-- Сделала 4 кнопки с разными стилями при нажатии -->
+
         <div>
-            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow', 'dotted', '7px')">
-            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'orange', 'black', 'solid', '3px')">
+            <br>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow', 'dotted', '5px')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'orange', 'black', 'solid', '5px')">
             <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'green', 'white', 'double', '5px')">
-            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'lightblue', 'blue', 'dashed', '3px')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'lightblue', 'blue', 'dashed', '5px')">
+        </div>
+        <div id="output"></div><br>
+
+<!-- Сделала "корзину" и расчет суммы всех покупок -->
+
+        <div class="korzina">
+            <p style="font-size: xx-large; color: rgb(13, 13, 108); text-align: center;"><b>Корзина товаров</b></p>
+            <div><b>Ананасы (120р/шт):</b></div>
+            <label><input type="number" value="1" id="n1"></label><br>
+            <br>
+            
+            <div><b>Шоколад Milka (80р/шт):</b></div>
+            <label><input type="number" value="1" id="n2"></label><br>
+            <br>
+           
+            <div><b>Абрикосы (45р/шт):</b></div>
+            <label><input type="number" value="1" id="n3"></label><br>
+            <br>
+            
+            <div><b>Яблочный сок (90р/шт):</b></div>
+            <label><input type="number" value="1" id="n4"></label><br>
+            <br>
+            
+            <div><b>Арбузы (500р/шт):</b></div>
+            <label><input type="number" value="1" id="n5"></label><br>
+            <br>
+            
+            <input type="button" value="Рассчитать" onclick="korzina()" style="cursor: pointer;"><br>
+            <br>
+            <div id="output1" style="font-size: large; color: rgb(13, 13, 108); font-weight: bold;"></div>
         </div>
 
-        <div id="output"></div>
+<!-- Сделала 10 разноцветных кругов, которые исчезают при нажатии -->
+
+            <br><br>
+            <div class="krugi krugi1" onclick="krug_nazhat(this)">1</div>
+            <div class="krugi krugi2" onclick="krug_nazhat(this)">2</div>
+            <div class="krugi krugi3" onclick="krug_nazhat(this)">3</div>
+            <div class="krugi krugi4" onclick="krug_nazhat(this)">4</div>
+            <div class="krugi krugi5" onclick="krug_nazhat(this)">5</div>
+            <div class="krugi krugi6" onclick="krug_nazhat(this)">6</div>
+            <div class="krugi krugi7" onclick="krug_nazhat(this)">7</div>
+            <div class="krugi krugi8" onclick="krug_nazhat(this)">8</div>
+            <div class="krugi krugi9" onclick="krug_nazhat(this)">9</div>
+            <div class="krugi krugi10" onclick="krug_nazhat(this)">10</div>
+
     </main>
 
+    <br>
     <footer onclick="showAutor()">
         &copy; Елизавета Якунина, ФБИ-14, 2 курс, 2023
     </footer>
