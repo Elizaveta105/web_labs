@@ -18,6 +18,13 @@
             margin: 10px auto;
             padding: 1%;
         }
+
+        .rules {
+            border: 3px solid cornflowerblue;
+            border-radius: 30px;
+            margin: 10px 300px;
+            padding: 15px 10px;
+        }
     </style>
 
     <script>
@@ -48,14 +55,34 @@
                 document.getElementById ('number').innerHTML = number;
                 document.getElementById ('try-count').innerHTML = count;
             }
+            if (userNumber < 1) {
+                message.innerHTML = 'Внимание!Число должно быть в диапазоне от 1 до 100!';
+            }
+            if (userNumber > 100) {
+                message.innerHTML = 'Внимание!Число должно быть в диапазоне от 1 до 100!';
+            }
         }
 
         function again(params) { //Обработчик кнопки "сыграть еще раз"
+            count = 0;
+            let screens = document.getElementsByClassName('game');
             screens[2].style.display = 'none';
             screens[1].style.display = 'block';
-            var randomNumber = Math.floor(Math.random() * 100) + 1;
-            var attempts = 0;
-            document.getElementById("result").innerHTML = "";
+            number = Math.floor(Math.random() * 100) + 1;
+            document.getElementById('try-count').innerHTML = count;
+            document.getElementById('result').innerHTML = "";
+        }
+
+        function rul() {
+            let okno = document.getElementsByClassName('rules');
+            okno[0].style.display = 'none';
+            okno[1].style.display = 'block';
+        }
+
+        function rulNone() {
+            let okno = document.getElementsByClassName('rules');
+            okno[1].style.display = 'none';
+            okno[0].style.display = 'block';
         }
     </script>
 
@@ -94,6 +121,22 @@
                 <button onclick="again()">Сыграть еще раз</button><br>
             </div>
 
+        </div>
+
+        <div class="rules">
+            <button onclick="rul()">Показать правила игры</button>
+        </div>
+
+        <div class="rules" style="display: none;">
+            <button onclick="rulNone()">Скрыть правила игры</button>
+            <ol type="A">
+                <li>Нажмите на кнопку "Сыграть в игру";</li>
+                <li>Введите загаданное число;</li>
+                <li>Нажмите на кнопку "Угадать";</li>
+                <li>Продолжайте вводить числа, пока не угадаете;</li>
+                <li>Радуйтесь победе;</li>
+                <li>При желании повторите игру.</li>
+            </ol>
         </div>
 
     </main>
