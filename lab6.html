@@ -221,11 +221,6 @@
         }
     </script>
 
-        
-    </script>
-
-
-
 </head>
 <body>
     <header>
@@ -271,18 +266,40 @@
                 <li>Нажмите на кнопку "Сыграть в игру";</li>
                 <li>Введите загаданное число;</li>
                 <li>Нажмите на кнопку "Угадать";</li>
-                <li>Продолжайте вводить числа, пока не угадаете;</li>
+                <li>Перебирайте числа от 1 до 100, пока не угадаете;</li>
                 <li>Радуйтесь победе;</li>
                 <li>При желании повторите игру.</li>
             </ol>
         </div>
 
-        <div class="yellow" ondblclick="changeColor(this)">
-            Цвет:<span id="color-name">желтый</span><br>
+  
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">жёлтый</span><br>
             Сделайте двойной щелчок, чтобы сменить цвет
         </div>
 
-        <div class="click" onclick="plase(this)">Щелкни меня</div>
+        <div class="dvizh" onclick="dvig(this)">Щёлкни меня</div>
+        <div id="rashirenie" onclick="rash()"></div>
+
+        <div>
+ Цвет одежды:
+            <select id="wear-color">
+                <option>Красный</option>
+                <option>Белый</option>
+                <option>Чёрный</option>
+            </select><br>
+
+ Тип одежды:
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Поло</option>
+                <option>Майка</option>
+            </select><br>
+
+            <button onclick="filter()">ОК</button><br>
+
+            <img id="wear">
+
 
     </main>
 
