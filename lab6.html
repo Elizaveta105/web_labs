@@ -31,8 +31,7 @@
             width: 300px;
             border: 2px solid  rgb(110, 7, 112);
             background-color: rgb(255, 0, 191);
-            margin: 30px;
-            border-radius: 3px;
+            border-radius: 30px;
             text-align: center;
             padding: 8px;
             color: white;
@@ -44,7 +43,7 @@
             text-align: center;
             background-color: rgb(76, 122, 223);
             border: 2px solid rgb(18, 8, 157);
-            border-radius: 5px;
+            border-radius: 30px;
             cursor: pointer;
             padding: 20px;
             margin: 30px 0px 30px 0px;
@@ -59,7 +58,7 @@
             background-color: rgb(35, 168, 9);
             color: rgb(101, 64, 15);
             border: 3px solid rgb(13, 88, 18);
-            border-radius: 15px;
+            border-radius: 30px;
             cursor: pointer;
             padding: 20px 0px 20px 0px;
             margin: 30px 0px 30px 0px;
@@ -183,40 +182,58 @@
             let wear = document.getElementById('wear');
 
             if (color == 'Красный' && type == 'Футболка') {
-                wear.src = 'https://yandex.ru/images/search?from=tabbar&img_url=https%3A%2F%2Fwww.pikpng.com%2Fpngl%2Fb%2F29-297803_red-t-shirt-png-clip-art-transparent-png.png&lr=65&pos=3&rpt=simage&text=%D0%BA%D1%80%D0%B0%D1%81%D0%BD%D0%B0%D1%8F%20%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D0%BA%D0%B0';
+                wear.src = 'https://pics.clipartpng.com/Red_T_Shirt_PNG_Clip_Art-3105.png';
                 document.getElementById('wear').src = wear.src;
+                wear.style.width = '40%';
+                wear.style.height = '40%';
             }
             else if (color == 'Красный' && type == 'Поло') {
-                wear.src = 'red-p.jpg';
+                wear.src = 'https://brandpresent.ru/shop/project/1000/BP_pui10004_2_1000x1000.jpg';
                 document.getElementById('wear').src = wear.src;
+                wear.style.width = '40%';
+                wear.style.height = '40%';
             }
             else if (color == 'Красный' && type == 'Майка') {
-                wear.src = 'red-m.jpeg';
+                wear.src = 'https://1souvenir.ru/d/3000/d/02117145__2__tif__1000x1000.jpg';
                 document.getElementById('wear').src = wear.src;
+                wear.style.width = '40%';
+                wear.style.height = '40%';
             }
             else if (color == 'Чёрный' && type == 'Футболка') {
-                wear.src = 'black-f.jpg';
+                wear.src = 'https://pyxis.nymag.com/v1/imgs/6bf/da1/69a1e642a504d322e3f63a8399cdc68839-9----.2x.h473.w710.jpg';
                 document.getElementById('wear').src = wear.src;
+                wear.style.width = '40%';
+                wear.style.height = '40%';
             }
             else if (color == 'Чёрный' && type == 'Поло') {
-                wear.src = 'black-p.jpg';
+                wear.src = 'http://kaurisport.com/wp-content/uploads/polo-negro-bordado-gris-c.png';
                 document.getElementById('wear').src = wear.src;
+                wear.style.width = '40%';
+                wear.style.height = '40%';
             }
             else if (color == 'Чёрный' && type == 'Майка') {
-                wear.src = 'black-m.jpg';
+                wear.src = 'https://main-cdn.sbermegamarket.ru/hlr-system/-20/418/096/491/291/55/600001545628b0.jpeg';
                 document.getElementById('wear').src = wear.src;
+                wear.style.width = '40%';
+                wear.style.height = '40%';
             }
             else if (color == 'Белый' && type == 'Футболка') {
-                wear.src = 'white-f.jpeg';
+                wear.src = 'https://nazya.com/anyimage/img.alicdn.com/imgextra/i2/3045152654/TB2OT0.kHuWBuNjSszgXXb8jVXa_!!3045152654.png';
                 document.getElementById('wear').src = wear.src;
+                wear.style.width = '40%';
+                wear.style.height = '40%';
             }
             else if (color == 'Белый' && type == 'Поло') {
-                wear.src = 'white-p.jpg';
+                wear.src = 'https://lacoste.ru/upload/photo/1476/PH539C001.04.jpg';
                 document.getElementById('wear').src = wear.src;
+                wear.style.width = '40%';
+                wear.style.height = '40%';
             }
             else if (color == 'Белый' && type == 'Майка') {
-                wear.src = 'white-m.jpg';
+                wear.src = 'https://img2.freepng.es/20180403/caq/kisspng-t-shirt-clothing-sleeveless-shirt-undershirt-cotton-5ac3d311b54bd3.4483810415227829937426.jpg';
                 document.getElementById('wear').src = wear.src;
+                wear.style.width = '40%';
+                wear.style.height = '40%';
             }
         }
     </script>
@@ -278,28 +295,26 @@
             Сделайте двойной щелчок, чтобы сменить цвет
         </div>
 
-        <div class="dvizh" onclick="dvig(this)">Щёлкни меня</div>
-        <div id="rashirenie" onclick="rash()"></div>
+        <div class="dvizh" onclick="place(this)">Щёлкни меня</div>
+        <div class="rashirenie" onclick="rash()"></div>
+        <div class="filter"></div>
 
-        <div>
- Цвет одежды:
+        Цвет одежды:
             <select id="wear-color">
                 <option>Красный</option>
                 <option>Белый</option>
                 <option>Чёрный</option>
             </select><br>
 
- Тип одежды:
+        Тип одежды:
             <select id="wear-type">
                 <option>Футболка</option>
                 <option>Поло</option>
                 <option>Майка</option>
             </select><br>
 
-            <button onclick="filter()">ОК</button><br>
-
+            <button onclick="filter(this)">ОК</button><br>
             <img id="wear">
-
 
     </main>
 
