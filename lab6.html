@@ -12,6 +12,7 @@
             text-align: center;
             border: 3px solid;
             border-color: rgb(110, 7, 112);
+            background-color: rgb(187, 135, 237);
             border-radius: 30px;
             width: 400px;
             height: auto;
@@ -21,6 +22,8 @@
 
         .rules {
             border: 3px solid cornflowerblue;
+            background-color: rgb(181, 181, 255);
+            color: rgb(26, 7, 95);
             border-radius: 30px;
             margin: 10px 300px;
             padding: 15px 10px;
@@ -29,42 +32,67 @@
         .color {            
             cursor: pointer;
             width: 300px;
-            border: 2px solid  rgb(110, 7, 112);
-            background-color: rgb(255, 0, 191);
+            border: 3px solid  rgb(110, 7, 112);
+            background-color: yellow;
             border-radius: 30px;
             text-align: center;
             padding: 8px;
-            color: white;
+            color: black;
             font-weight: bolder;
         }
 
         .dvizh {
-            width: 150px;
+            width: 170px;
+            height: 100px;
+            float: left;
             text-align: center;
-            background-color: rgb(76, 122, 223);
-            border: 2px solid rgb(18, 8, 157);
-            border-radius: 30px;
+            font-size: 150%;
+            background-color:  rgb(153, 25, 119);
+            border: 8px dotted azure;
+            color: azure;
+            border-radius: 50%;
             cursor: pointer;
-            padding: 20px;
+            padding: 3%;
             margin: 30px 0px 30px 0px;
-            position: relative;
             left: 0px;
-            transition: 2s;
+            top: 5px;
+            transition: 15s;
+            line-height: 90px;
+            transform: rotate();
         }
 
-        .rashirenie {
+        .polozhenie {
             width: 100px;
+            height: 50px;
             text-align: center;
-            background-color: rgb(35, 168, 9);
-            color: rgb(101, 64, 15);
-            border: 3px solid rgb(13, 88, 18);
+            float: left;
             border-radius: 30px;
             cursor: pointer;
+            top: 150px;
+            left: 200px;
             padding: 20px 0px 20px 0px;
             margin: 30px 0px 30px 0px;
             position: relative;
             font-size: small;
+            
         }
+        .block{
+            width: 100px;
+            height: 50px;
+            background-color: rgb(7, 173, 35);
+            border: 3px solid rgb(11, 102, 30);
+            border-radius: 30px;
+            position: relative;
+            cursor: pointer;
+            top: 260px;
+        }
+
+        .filter {
+            margin-top: 280px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
     </style>
 
     <script>
@@ -113,66 +141,73 @@
             document.getElementById('result').innerHTML = "";
         }
 
-        function rul() {
+        function rul() { //Показывает окно с правилами игры
             let okno = document.getElementsByClassName('rules');
             okno[0].style.display = 'none';
             okno[1].style.display = 'block';
         }
 
-        function rulNone() {
+        function rulNone() { //Скрывает окно с правилами игры
             let okno = document.getElementsByClassName('rules');
             okno[1].style.display = 'none';
             okno[0].style.display = 'block';
         }
 
-        function changeColor() {
+        function changeColor(div) {
             if (div.style.backgroundColor == 'yellow') {
                 div.style.backgroundColor = 'red';
                 div.style.fontFamily = 'Arial';
+                div.style.color = '#CCFFFF';
                 document.getElementById('color-name').innerHTML = 'красный';
             }
             else if (div.style.backgroundColor == 'red') {
                 div.style.backgroundColor = 'black';
                 div.style.fontFamily = 'Courier NewVerdana';
+                div.style.color = 'white';
                 document.getElementById('color-name').innerHTML = 'чёрный';
             }
             else if (div.style.backgroundColor == 'black') {
-                div.style.backgroundColor = 'pink';
+                div.style.backgroundColor = 'rgb(255, 102, 153)';
                 div.style.fontFamily = 'Courier New';
+                div.style.color = '#660066';
                 document.getElementById('color-name').innerHTML = 'розовый';
             }
-            else if (div.style.backgroundColor == 'pink') {
-                div.style.backgroundColor = 'lightblue';
+            else if (div.style.backgroundColor == 'rgb(255, 102, 153)') {
+                div.style.backgroundColor = 'rgb(102, 255, 204)';
                 div.style.fontFamily = 'Times New Roman';
+                div.style.color = '#006666';
                 document.getElementById('color-name').innerHTML = 'бирюзовый';
             }
             else {
                 div.style.backgroundColor = 'yellow';
+                div.style.color = 'black';
                 document.getElementById('color-name').innerHTML = 'жёлтый';
             }
         }
 
-        function dvizh(div) {
-            if (div.style.left == '0px') {
-                div.style.left = '1300px';
-                div.style.transform = 'rotate(4turn)';
+        function dvizh(smena) {
+            if (smena.style.float == 'left'){
+                smena.style.float = 'right';
+                smena.style.transition = '500ms 1s';
+                if (smena.style.transform = 'rotate()'){
+                    smena.style.transform = 'rotate(4turn)';
+                }
             }
             else {
-                div.style.left = '0px';
-                div.style.transform = 'rotate(0)';
+                smena.style.float = 'left';
+                smena.style.transition = '5000ms 0,2s';
+                if (smena.style.transform = 'rotate(4turn)'){
+                    smena.style.transform = 'rotate()';
+                }
             }
         }
 
-        function rashirenie() {
-            var n1 = document.getElementById("rash");
-            width = document.getElementById("rash").clientWidth;
-            if (n1.style.width == '1000px')
-            {
-                n1.style.width = '100px';
+        function block(n) {
+            if (parseInt(n.style.width)<=1000) { //Преобразует аргумент в строковый тип
+                n.style.width = parseInt(n.style.width)+50+'px';
             }
-            else
-            {
-                n1.style.width = width + 50 + 'px';
+            else {
+                n.style.width = '150px';
             }
         }
 
@@ -249,10 +284,10 @@
             <button onclick="startGame()">Сыграть в игру</button><br>
         </div>
 
-        <div class="game" style="display: none;">
+        <div class="game" style="display: none;"><br>
             <h1>Угадай число!</h1>
             <div>
-                Задумано число от 1 до 100. Угадайте, какое?<br>
+                Задумано число от 1 до 100. Угадайте, какое?
                 <input type="number" value="" min="1" max="100" id="user-number"><br>
                 <button onclick="guess()">Угадать</button>
                 <div id="result"></div><br>
@@ -295,8 +330,8 @@
             Сделайте двойной щелчок, чтобы сменить цвет
         </div>
 
-        <div class="dvizh" onclick="place(this)">Щёлкни меня</div>
-        <div class="rashirenie" onclick="rash()"></div>
+        <div class="dvizh" onclick="dvizh(this)">Щёлкни меня</div>
+        <div class='block' onclick="block(this)"></div><br>
         <div class="filter"></div>
 
         Цвет одежды:
@@ -313,8 +348,8 @@
                 <option>Майка</option>
             </select><br>
 
-            <button onclick="filter(this)">ОК</button><br>
-            <img id="wear">
+            <button onclick="filter(this)">ОК</button><br><br>
+            <img id="wear"><br><br><br>
 
     </main>
 
