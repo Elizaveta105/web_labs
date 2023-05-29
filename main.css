@@ -10,7 +10,7 @@ header {
     color: white;
     padding: 5px;
     font-size: 16pt;
-    transition: 600ms 2s;
+    transition: 300ms 1s;
 }
 
 main {
@@ -19,12 +19,12 @@ main {
 
 header:hover{
     font-size: xx-large;
-    transition: 700ms 0.1s;
+    transition: 200ms 0.1s;
 }
 
 header:active{
     color: blueviolet;
-    transition: 500ms 0.1s;
+    transition: 300ms 0.1s;
 }
 
 footer {
@@ -33,17 +33,22 @@ footer {
     padding: 5px;
     font-size: 14pt;
     text-align: right;
-    transition: 600ms 2s;
+    transition: 300ms 1s;
+    position: fixed;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    z-index: 7;
 }
 
 footer:hover{
     font-size:x-large;
-    transition: 700 0.1s;
+    transition: 200ms 0.1s;
 }
 
 footer:active{
     color: yellow;
-    transition: 500ms 0.1s;
+    transition: 300ms 0.1s;
 }
 
 a {
