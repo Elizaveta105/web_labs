@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Московская биржа</title>
+    <link rel="stylesheet" href="RGZstyle.css">
+    <style>
+        /* Внешний вид названий разделов меню */
+        .razdel1 {
+            border: 3px solid black;
+            background-color: white;
+            border-radius: 50px;
+            height: 80px;
+            padding: 15px 20px;
+            margin: 20px;
+        }
+        .razdel2 {
+            border: 3px solid black;
+            background-color: white;
+            border-radius: 50px;
+            height: 80px;
+            padding: 15px 20px;
+            margin: 20px;
+        }
+        .razdel3 {
+            border: 3px solid black;
+            background-color: white;
+            border-radius: 50px;
+            height: 80px;
+            padding: 15px 20px;
+            margin: 20px;
+        }
+        .razdel4 {
+            border: 3px solid black;
+            background-color: white;
+            border-radius: 50px;
+            height: 80px;
+            padding: 15px 20px;
+            margin: 20px;
+        }
+
+        /* Изменение цвета посещенных разделов меню */
+        a.razdel1:visited {
+            color: rgb(102, 98, 98); 
+        }
+
+        a.razdel2:visited {
+            color: rgb(102, 98, 98); 
+        }
+        a.razdel3:visited {
+            color: rgb(102, 98, 98); 
+        }
+        a.razdel4:visited {
+            color:  black; 
+            background-color: rgb(221, 221, 221);
+        }
+
+        /* Изменение заголовка меню при наведении мыши */
+        a.razdel1:hover {  
+            background-color: rgb(215, 215, 215);
+            font-weight: bold;
+            color: rgb(150, 0, 0);
+        }
+        a.razdel2:hover {
+            background-color: rgb(215, 215, 215);
+            font-weight: bold;
+            color: rgb(150, 0, 0);
+        }
+        a.razdel3:hover {
+            background-color: rgb(215, 215, 215);
+            font-weight: bold;
+            color: rgb(150, 0, 0);
+        }
+        a.razdel4:hover {
+            background-color: rgb(215, 215, 215);
+            font-weight: bold;
+            color: rgb(150, 0, 0);
+        }
+
+        /* Настройки видео */
+        .video {
+            text-align: center;
+        }
+
+        .video iframe{
+            border-radius: 20px;
+            height: 405px;
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+    <header> 
+        <img src="MB.logo.jpg" style="height: 70px;">
+        <div class="shapka" style="display: inline;">
+            <a href="RGZ.razdel1.html" class="razdel1">О компании</a>
+            <a href="RGZ.razdel2.html" class="razdel2">Основные финансовые показатели</a>
+            <a href="RGZ.razdel3.html" class="razdel3">Контактные данные</a>
+            <a href="RGZ.razdel4.html" class="razdel4">Видео</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="otstup"></div>
+        <h1 class="razdel_name">Видео «В гостях у Московской Биржи»</h1>
+        <h3><p>Показали, как устроена <u>Московская биржа</u> в пилотном выпуске проекта «Инвест-Тур».</p>
+            <p>«Открытие Инвестиции» посетили наш офис, а мы рассказали о направлениях нашего бизнеса, 
+            развитии финансовых инструментов и о нестандартных ситуациях, с которыми сталкивается ведущая площадка страны.
+            Во время разговора мы поделились советами, планами и затронули много других тем, которые будут 
+            интересны опытным и начинающим инвесторам.</p></h3>
+
+        <div class="video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/eKZ2e5y_WKE" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+            encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </main>
+    <footer>
+        <div>&copy; Московская биржа, 2023</div>
+    </footer>
+</body>
+</html>
