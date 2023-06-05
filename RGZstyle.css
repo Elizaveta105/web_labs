@@ -1,0 +1,79 @@
+header { 
+    background: rgb(212, 0, 0);
+    top: 0px;
+    padding: 15px;
+    font-size: 30pt;
+    text-align: justify;
+    font-family: Cambria;
+    transition: 300ms 2s;
+    height: 70px;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    box-shadow: 0px 2px 5px grey;
+}
+
+body {
+    background: white;
+    font-family: Cambria;
+    margin: 0px;
+    padding: 0px;
+    font-size: 13pt;
+}
+
+main {
+    background: white;
+    font-family: Cambria;
+    margin: 10px 20px;
+    padding: 0px;
+    color: black;
+    text-align: justify;
+    height: 100%;
+}
+
+a {
+    font-size: 15pt;
+    color: white;
+    text-decoration: none;
+    transition: 500ms 0.01s;
+    padding: 0px 50px 0px 50px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 50px;
+}
+
+footer {
+    padding: 10px 0px 15px 0px; 
+    font-size: 11pt;
+    background: rgb(203, 203, 203);
+    height: 15px;
+    width: 100%;
+    bottom: 0px;
+    color: black;
+    font-weight: bold;    
+    position: relative;
+    text-align: center;
+    box-shadow: 0px 2px 5px 5px grey;
+}
+
+.shapka {
+    text-align: center;
+    position: relative;
+    top: -27px;
+    right: -70px;
+}
+
+.zagolovki {
+    color: rgb(150, 0, 0);
+    position: relative;
+}
+
+.razdel_name {
+    text-align: left;
+    font-size: 30pt;
+    color: rgb(150, 0, 0);
+}
+
+.otstup {
+    height: 80px;
+}
