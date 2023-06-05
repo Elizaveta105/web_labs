@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Московская биржа</title>
+    <link rel="stylesheet" href="RGZstyle.css">
+    <style>
+        /* Внешний вид названий разделов меню */
+        .razdel1 {
+            border: 3px solid black;
+            background-color: white;
+            border-radius: 50px;
+            height: 80px;
+            padding: 15px 20px;
+            margin: 20px;
+        }
+        .razdel2 {
+            border: 3px solid black;
+            background-color: white;
+            border-radius: 50px;
+            height: 80px;
+            padding: 15px 20px;
+            margin: 20px;
+        }
+        .razdel3 {
+            border: 3px solid black;
+            background-color: white;
+            border-radius: 50px;
+            height: 80px;
+            padding: 15px 20px;
+            margin: 20px;
+        }
+        .razdel4 {
+            border: 3px solid black;
+            background-color: white;
+            border-radius: 50px;
+            height: 80px;
+            padding: 15px 20px;
+            margin: 20px;
+        }
+
+        /* Изменение цвета посещенных разделов меню */
+        a.razdel1:visited {
+            color: rgb(102, 98, 98); 
+        }
+        a.razdel2:visited {
+            color: rgb(102, 98, 98); 
+        }
+        a.razdel3:visited {
+            color:  black; 
+            background-color: rgb(221, 221, 221);
+        }
+        a.razdel4:visited {
+            color: rgb(102, 98, 98); 
+        }
+
+        /* Изменение заголовка меню при наведении мыши */
+        a.razdel1:hover {  
+            background-color: rgb(215, 215, 215);
+            font-weight: bold;
+            color: rgb(150, 0, 0);
+        }
+        a.razdel2:hover {
+            background-color: rgb(215, 215, 215);
+            font-weight: bold;
+            color: rgb(150, 0, 0);
+        }
+        a.razdel3:hover {
+            background-color: rgb(215, 215, 215);
+            font-weight: bold;
+            color: rgb(150, 0, 0);
+        }
+        a.razdel4:hover {
+            background-color: rgb(215, 215, 215);
+            font-weight: bold;
+            color: rgb(150, 0, 0);
+        }
+
+        .contacts {
+            border-radius: 20px;
+            border: 1px solid black;
+            background-color: rgb(238, 238, 238);
+            height: 500px;
+            padding: 30px 20px 10px 20px;
+        }
+
+        .contacts1 {
+            position: relative;
+            top: -30px;
+        }
+
+        .contacts2 {
+            position: absolute;
+            left: 1204px;
+            top: 163px;
+            padding: 30px 20px 10px 20px;
+        }
+
+        /*Настройки карты*/
+        .map {
+            position: absolute;
+            text-align: center;
+            top: 210px;
+            left: 450px;
+        }
+        .map iframe{
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="MB.logo.jpg" style="height: 70px;">
+        <div class="shapka" style="display: inline;">
+            <a href="RGZ.razdel1.html" class="razdel1">О компании</a>
+            <a href="RGZ.razdel2.html" class="razdel2">Основные финансовые показатели</a>
+            <a href="RGZ.razdel3.html" class="razdel3">Контактные данные</a>
+            <a href="RGZ.razdel4.html" class="razdel4">Видео</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="otstup"></div>
+        <h1 class="razdel_name">Контактные данные MOEX</h1>
+        <div class="contacts">
+            <div class="contacts1">
+                    <h2>Адреса офисов:</h2>
+                    <div>125009 г. Москва, Большой Кисловский пер., д. 13</div><br>
+                    <div>125009 г. Москва, ул. Воздвиженка, д.4/7, стр.1</div>
+                    <h2>Контакты для СМИ:</h2>
+                    <div>e-mail: pr@moex.com</div>
+                    <h2 style="width: 350px;">Контакты для инвесторов и аналитиков:</h2>
+                    <div>e-mail: ir@moex.com</div>
+                    <h2>Листинг ценных бумаг:</h2>
+                    <div>e-mail: listing@moex.com</div><br>
+                    <div>e-mail: issuersconsulting@moex.com</div>
+            </div>
+            <div class="contacts2">
+                    <h2>Фондовый рынок:</h2>
+                    <div>+7 (495) 705-9657</div><br>
+                    <div>+7 (495) 733-9507 (MOEX Board)</div>
+                    <h2>Срочный рынок:</h2>
+                    <div>+7 (495) 733-9507</div>
+                    <h2>Валютный рынок:</h2>
+                    <div>+7 (495) 705-9631</div>
+                    <h2>РЕПО и депозиты:</h2>
+                    <div>+7 (495) 705-9650</div>
+                    <h2>Товарный рынок:</h2>
+                    <div>+7 (495) 705-9676</div>        
+            </div>
+        </div>
+
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1069.0137140803652!2d37.608317564510195!3d55.75289713831207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a51935e62a3%3A0x66bc55b46672763b!2z0JzQvtGB0LrQvtCy0YHQutCw0Y8g0JHQuNGA0LbQsA!5e0!3m2!1sru!2sru!4v1685966471299!5m2!1sru!2sru" width="750" height="500" style="border: 1px solid;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div><br><br>
+    </main>
+    <footer>
+        <div>&copy; Московская биржа, 2023</div>
+    </footer>
+</body>
+</html>
