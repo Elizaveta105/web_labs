@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Московская биржа</title>
+    <link rel="stylesheet" href="RGZstyle.css">
+    <script>
+        function Stock () { /*Функция для расчета минимального и максимального значения акции*/
+            let date = ['3 апреля 2023','4 апреля 2023','5 апреля 2023','6 апреля 2023','7 апреля 2023','10 апреля 2023','11 апреля 2023','12 апреля 2023','13 апреля 2023','14 апреля 2023',
+            '17 апреля 2023','18 апреля 2023','19 апреля 2023','20 апреля 2023','21 апреля 2023','24 апреля 2023','25 апреля 2023','26 апреля 2023','27 апреля 2023','28 апреля 2023'];
+            let price = [113.86, 112.77, 112.58, 112.07, 112.27, 112.14, 111.11, 110.8, 110.65, 111.81, 112.04, 112.17, 110.9, 110.86, 110.97, 110.81, 110.74, 111.09, 110.68, 110.04];
+            let table = document.getElementById('Stock_price');
+            for (let d = 0; d < date.length; d++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                let td1 = document.createElement('td');
+                td.innerHTML = date[d];
+                td1.innerHTML = price[d];
+                tr.appendChild(td);
+                tr.appendChild(td1);
+                table.appendChild(tr);
+            }
+
+            let summa = 0;
+            var sr; 
+            for (let d=0; d<price.length; d++) {
+                sr = (summa += price[d]) / 20;
+            }
+
+            let otkl = [];
+            for (let d=0; d<price.length; d++) {
+                otkl.push(price[d] - sr);
+            }
+
+            let kvadrat = [];
+            let summa2 = 0;
+            let disp = 0;
+            for (let d=0; d<price.length; d++) {
+                kvadrat.push(otkl[d]**2);
+                if (kvadrat.length == 20) {
+                    for (let d=0; d<kvadrat.length; d++) {
+                        summa2 += kvadrat[d];
+                    }
+                }
+            }
+
+            disp = summa2/price.length;
+            let sr_otkl = 0;
+            sr_otkl = Math.sqrt(disp)
+            document.getElementById('min_zn').innerHTML = "Минимальная цена акции за апрель: " + Math.min(...price) + " руб.";
+            document.getElementById('max_zn').innerHTML = "Максимальная цена акции за апрель: " + Math.max(...price) + " руб.";
+            document.getElementById('otklonenie').innerHTML = "Среднеквадратическое отклонение цены: " + Math.floor(sr_otkl) + " руб.";
+        }
+    </script>
+
+    <style>
+         /* Внешний вид названий разделов меню */
+         .razdel1 {
+            border: 3px solid black;
+            background-color: white;
+            border-radius: 50px;
+            height: 80px;
+            padding: 15px 20px;
+            margin: 20px;
+        }
+        .razdel2 {
+            border: 3px solid black;
+            background-color: white;
+            border-radius: 50px;
+            height: 80px;
+            padding: 15px 20px;
+            margin: 20px;
+        }
+        .razdel3 {
+            border: 3px solid black;
+            background-color: white;
+            border-radius: 50px;
+            height: 80px;
+            padding: 15px 20px;
+            margin: 20px;
+        }
+        .razdel4 {
+            border: 3px solid black;
+            background-color: white;
+            border-radius: 50px;
+            height: 80px;
+            padding: 15px 20px;
+            margin: 20px;
+        }
+
+        .block1 {
+            display: inline-block;
+            border: 3px solid rgb(150, 0, 0);
+            border-radius: 20px;
+            height: 30px;
+            width: 400px;
+            padding: 20px 20px 40px 20px;
+        }
+
+        .block2 {
+            display: inline-block;
+            border: 3px solid rgb(150, 0, 0);
+            border-radius: 20px;
+            height: 30px;
+            width: 400px;
+            padding: 20px 20px 40px 20px;
+        }
+
+        .block3 {
+            display: inline-block;
+            border: 3px solid rgb(150, 0, 0);
+            border-radius: 20px;
+            height: 30px;
+            width: 400px;
+            padding: 20px 20px 40px 20px;
+        }
+
+        /* Изменение цвета посещенных разделов меню */
+        a.razdel1:visited {
+            color: rgb(102, 98, 98); 
+        }
+        a.razdel2:visited {
+            color:  black; 
+            background-color: rgb(221, 221, 221);
+        }
+        a.razdel3:visited {
+            color: rgb(102, 98, 98); 
+        }
+        a.razdel4:visited {
+            color: rgb(102, 98, 98); 
+        }
+
+        /* Изменение заголовка меню при наведении мыши */
+        a.razdel1:hover {  
+            background-color: rgb(215, 215, 215);
+            font-weight: bold;
+            color: rgb(150, 0, 0);
+        }
+        a.razdel2:hover {
+            background-color: rgb(215, 215, 215);
+            font-weight: bold;
+            color: rgb(150, 0, 0);
+        }
+        a.razdel3:hover {
+            background-color: rgb(215, 215, 215);
+            font-weight: bold;
+            color: rgb(150, 0, 0);
+        }
+        a.razdel4:hover {
+            background-color: rgb(215, 215, 215);
+            font-weight: bold;
+            color: rgb(150, 0, 0);
+        }
+
+    </style>
+</head>
+<body onload="Stock()">
+    <header>
+        <img src="MB.logo.jpg" style="height: 70px;">
+        <div class="shapka" style="display: inline;">
+            <a href="RGZ.razdel1.html" class="razdel1">О компании</a>
+            <a href="RGZ.razdel2.html" class="razdel2">Основные финансовые показатели</a>
+            <a href="RGZ.razdel3.html" class="razdel3">Контактные данные</a>
+            <a href="RGZ.razdel4.html" class="razdel4">Видео</a>
+        </div>
+    </header>
+    <main>
+        <div class="otstup"></div>
+        <h1 class="razdel_name">Основные финансовые показатели</h1>
+        <h2>Текущая рыночная капитализация компании «Московская биржа» составляет <i><u>279.2 млрд руб.</u></i></h2>
+        <h1 class="zagolovki">Итоги торгов в апреле 2023 года</h1>
+        <div style="font-size: 15pt;">Общий объем торгов на рынках <u><b>Московской биржи</b></u> в апреле 2023 года увеличился на <i>2,6%</i> по сравнению с прошлым годом и составил <b><i>90,3 трлн рублей</i></b>.
+            Лучшую динамику объема операций продемонстрировали <b>рынок облигаций</b> <i>(рост в 3,3 раза)</i>, <b>рынок акций</b> <i>(рост на 58,8%)</i>, <b>срочный рынок</b> <i>(рост на 20,8%)</i> и <b>спот-рынок
+            валюты</b> <i>(рост на 8,1%)</i>. Объем торгов на <b>рынке драгоценных металлов</b> увеличился в <i>8,7 раза.</i><br><br>
+            Число физических лиц, имеющих брокерские счета на Московской бирже, увеличилось до <b><i>25,1 млн.</i></b> Объем вложений частных инвесторов на рынке акций в апреле составил <b><i>38,4 млрд рублей</i></b>, а доля в объеме торгов акциями составила <b><i>81,5%.</i></b>
+            Самыми популярными ценными бумагами в портфелях частных инвесторов были обыкновенные и привилегированные акции Сбербанка (32,7% и 8,5% соответственно), акции «Газпрома» (20,2%), «ЛУКОЙЛа» (10,1%), «Норникеля» (7,3%), 
+            привилегированные акции «Сургутнефтегаза» (4,8%), акции «Роснефти» (4,6%), «НОВАТЭКа» (4,4%), Яндекса (4,3%) и «Полюса» (3,3%).</div><br><br>
+        <img src="MB.fond.png" style="position: relative; height: 450px; left: -40px;">
+        <img src="MB.metal.png" style="position: relative; height: 450px; left: 100px;">
+        <h1 class="zagolovki">Цены закрытых акций, обращающихся на Московской фондовой бирже</h1>
+        <table border="3" id="Stock_price" style="width: 300px; text-align: center; background-color: rgb(215, 215, 215);"></table>
+        <h3 class="block1"><div id="min_zn"></div></h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <h3 class="block2"><div id="max_zn"></div></h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <h3 class="block3"><div id="otklonenie"></div></h3>
+    </main>
+    <footer>
+        <div>&copy; Московская биржа, 2023</div>
+    </footer>
+</body>
+</html>
