@@ -75,15 +75,46 @@
                 krugi -= 1;
             }
         }
-        function table() {
-            let ty = document.getElementById('ty');
+        function table() { /*Таблица умножения на 17*/
+            let umnozh = document.getElementById('umnozh');
             for (let i = 12; i < 33; i++) {
                 let tbym = document.createElement('div');
-                tbym.innerHTML = (i+1) + ' * ' +  '31 ' + '= ' + (i + 1) * 31;
-                ty.appendChild(tbym);
+                tbym.innerHTML = (i+1) + ' * ' +  '17 ' + '= ' + (i + 1) * 17;
+                umnozh.appendChild(tbym);
             }
         }
 
+        // function OZON() {
+        //     let data = ['11.05.2023', '12.05.2023', '15.05.2023', '16.05.2023', '17.05.2023',
+        //     '18.05.2023', '19.05.2023', '22.05.2023', '23.05.2023', '24.05.2023'];
+        //     let cena = [1649, 1662, 1687, 1712, 1692, 1689, 1717, 1741, 1742, 1801];
+        //     let table = document.getElementById('akcii');
+        //     for (let i = 0; i < data.length; i++) {
+        //         let tr = document.createElement('tr');
+        //         let td = document.createElement('td');
+        //         let td1 = document.createElement('td');
+        //         let td2 = document.createElement('td');
+        //         td.innerHTML = data[i];
+        //         td1.innerHTML = cena[i];
+        //         if (i==0) {
+        //             td2.innerHTML = '-';
+        //         }
+        //         else {td2.innerHTML = cena[i] - cena[i-1]}
+        //         tr.appendChild(td);
+        //         tr.appendChild(td1);
+        //         tr.appendChild(td2);
+        //         table.appendChild(tr);
+                
+        //     }
+        //     let sum = 0;
+        //     var sr; 
+        //     for (let i=0; i<cena.length; i++) {
+        //         sr = (sum += cena[i]) / 10;
+        //     }
+        //     document.getElementById('CA').innerHTML = "Среднее значение: " + Math.floor(sr);
+        //     document.getElementById('CA1').innerHTML = "Минимальное значение: " + Math.min(...cena);
+        //     document.getElementById('CA2').innerHTML = "Максимальное значение значение: " + Math.max(...cena);
+        // }
     </script>
 </head>
 <body>
@@ -105,8 +136,8 @@
         <button onclick="red_green()">Красное/зелёное</button><br><br>
         <div id="RG"></div><br>
 
-        <button onclick="table()">Таблица умножения на 31</button><br><br>
-        <div id="ty"></div>
+        <button onclick="table()">Таблица умножения на 17</button><br><br>
+        <div id="umnozh"></div>
         
         <button onclick="OZON()">Курс акций Ozon</button>
         <table border="1" id="akcii"></table>
