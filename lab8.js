@@ -23,3 +23,20 @@ function showDate() {
     let today5 = new Date();
     out5.innerHTML = 'Дата и время для локали Албании: ' +   today5.toLocaleString('sq');
 }
+
+function showDateCount() {
+    var Days;
+    let today = new Date();
+    let inputDate = document.querySelector('input[type=date]');
+    let birthday = new Date(inputDate.value);
+    let daysCount = 'Количество дней с даты рождения: ' + Math.floor((today - birthday)/1000/60/60/24);
+    document.getElementById('DaysHB').innerHTML = daysCount;
+}
+
+function DeleteD() {
+    var Days;
+    let today = new Date();
+    let inputDate = document.querySelector('input[type=date]');
+    let birthday = new Date(inputDate.value);
+    document.getElementById('DaysHB').innerHTML = '';
+}
