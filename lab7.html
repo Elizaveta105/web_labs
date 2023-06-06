@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Якунина Елизавета Владимировна. Лабораторная 7</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        #KZ{
+            display: grid;
+            /* Автоматически заполняем на всю ширину grid-контейнера */
+            grid-template-columns: repeat(auto-fill, 50px);
+        }
+
+        .pusto {
+            height: 60px;
+        }
+    </style>
+    <script>
+        function addBlocks() {
+            let blocks = document.getElementById('blocks');
+            for (let i = 0; i < 10; i++) {
+                let block = document.createElement('div');
+                block.innerHTML = 'Блок №' + (i + 1) + ': ' + (2 * i**2);
+                blocks.appendChild(block);
+            }
+        }
+        function showExchange() {
+            let exchange = [70.5174, 70.1217, 70.0414, 70.3847, 70.5991,
+                            70.8924, 71.5763, 72.8949, 72.7923, 73.6307];
+            let table = document.getElementById('dollar-exchange');
+            for (let i = 0; i < exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerHTML = exchange[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+            let sum = 0;
+            for (let i = 0; i < exchange.length; i++) {
+                sum = sum + exchange[i];
+            }
+            let average = sum / exchange.length;
+            document.getElementById('detail').innerHTML = 'Среднее значение: ' + average;
+        }
+        function addTransparentBlocks() {
+            let pblocks = document.getElementById('transparent-blocks');
+            for (let i = 0; i < 10; i++) {
+                let pblock = document.createElement('div');
+                pblock.innerHTML = 'Блок №' + (i + 1);
+                pblock.style.opacity = (i/10) + 0.1;
+                pblocks.appendChild(pblock);
+            }
+        }
+        function kz() {
+            let KZ = document.getElementById('KZ');
+            let krugi = parseInt(document.getElementById('polevv').value);
+            for(let i = krugi - 1; i >= 0; i = i - 1) {
+                let krug = document.createElement('div');
+                krug.innerHTML = krugi;
+                if (krugi % 2 != 0)
+                {
+                    krug.style.border = "2px solid red";
+                }
+                else
+                {
+                    krug.style.border = "2px solid green";
+                }
+                krug.style.borderRadius = "30px";
+                krug.style.width = "20px";
+                krug.style.margin = "5px";
+                krug.style.padding = "10px";
+                KZ.appendChild(krug);
+                krugi -= 1;
+            }
+        }
+        function table() {
+            let ty = document.getElementById('ty');
+            for (let i = 12; i < 33; i++) {
+                let tbym = document.createElement('div');
+                tbym.innerHTML = (i+1) + ' * ' +  '31 ' + '= ' + (i + 1) * 31;
+                ty.appendChild(tbym);
+            }
+        }
+        function OZON() {
+            let data = ['11.05.2023', '12.05.2023', '15.05.2023', '16.05.2023', '17.05.2023',
+            '18.05.2023', '19.05.2023', '22.05.2023', '23.05.2023', '24.05.2023'];
+            let cena = [1649, 1662, 1687, 1712, 1692, 1689, 1717, 1741, 1742, 1801];
+            let table = document.getElementById('akcii');
+            for (let i = 0; i < data.length; i++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                let td1 = document.createElement('td');
+                let td2 = document.createElement('td');
+                td.innerHTML = data[i];
+                td1.innerHTML = cena[i];
+                if (i==0) {
+                    td2.innerHTML = '-';
+                }
+                else {td2.innerHTML = cena[i] - cena[i-1]}
+                tr.appendChild(td);
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                table.appendChild(tr);
+                
+            }
+            let sum = 0;
+            var sr; 
+            for (let i=0; i<cena.length; i++) {
+                sr = (sum += cena[i]) / 10;
+            }
+            document.getElementById('CA').innerHTML = "Среднее значение: " + Math.floor(sr);
+            document.getElementById('CA1').innerHTML = "Минимальное значение: " + Math.min(...cena);
+            document.getElementById('CA2').innerHTML = "Максимальное значение значение: " + Math.max(...cena);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+
+    <footer>
+        &copy; Елизавета Якунина, ФБИ-14, 2 курс, 2023
+    </footer>
+</body>
+</html>
