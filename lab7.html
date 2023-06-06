@@ -7,7 +7,7 @@
     <title>Якунина Елизавета Владимировна. Лабораторная 7</title>
     <link rel="stylesheet" href="main.css">
     <style>
-        #KZ{
+        #RG{
             display: grid;
             /* Автоматически заполняем на всю ширину grid-контейнера */
             grid-template-columns: repeat(auto-fill, 50px);
@@ -53,39 +53,37 @@
                 pblocks.appendChild(pblock);
             }
         }
- 
-        }
-        function OZON() {
-            let data = ['11.05.2023', '12.05.2023', '15.05.2023', '16.05.2023', '17.05.2023',
-            '18.05.2023', '19.05.2023', '22.05.2023', '23.05.2023', '24.05.2023'];
-            let cena = [1649, 1662, 1687, 1712, 1692, 1689, 1717, 1741, 1742, 1801];
-            let table = document.getElementById('akcii');
-            for (let i = 0; i < data.length; i++) {
-                let tr = document.createElement('tr');
-                let td = document.createElement('td');
-                let td1 = document.createElement('td');
-                let td2 = document.createElement('td');
-                td.innerHTML = data[i];
-                td1.innerHTML = cena[i];
-                if (i==0) {
-                    td2.innerHTML = '-';
+               
+        function red_green() { /*Красные и зеленые круги*/
+            let RG = document.getElementById('RG');
+            let krugi = parseInt(document.getElementById('polevv').value);
+            for(let i = krugi - 1; i >= 0; i = i - 1) {
+                let krug = document.createElement('div');
+                krug.innerHTML = krugi;
+                if (krugi % 2 != 0)
+                {
+                    krug.style.border = "3px dotted red";
                 }
-                else {td2.innerHTML = cena[i] - cena[i-1]}
-                tr.appendChild(td);
-                tr.appendChild(td1);
-                tr.appendChild(td2);
-                table.appendChild(tr);
-                
+                else
+                {
+                    krug.style.border = "3px dotted green";
+                }
+                krug.style.borderRadius = "30px";
+                krug.style.width = "20px";
+                krug.style.padding = "13px";
+                RG.appendChild(krug);
+                krugi -= 1;
             }
-            let sum = 0;
-            var sr; 
-            for (let i=0; i<cena.length; i++) {
-                sr = (sum += cena[i]) / 10;
-            }
-            document.getElementById('CA').innerHTML = "Среднее значение: " + Math.floor(sr);
-            document.getElementById('CA1').innerHTML = "Минимальное значение: " + Math.min(...cena);
-            document.getElementById('CA2').innerHTML = "Максимальное значение значение: " + Math.max(...cena);
         }
+        function table() {
+            let ty = document.getElementById('ty');
+            for (let i = 12; i < 33; i++) {
+                let tbym = document.createElement('div');
+                tbym.innerHTML = (i+1) + ' * ' +  '31 ' + '= ' + (i + 1) * 31;
+                ty.appendChild(tbym);
+            }
+        }
+
     </script>
 </head>
 <body>
@@ -103,9 +101,9 @@
         <button onclick="addTransparentBlocks()">Создать полупрозрачные блоки</button><br><br>
         <div id="transparent-blocks"></div>
 
-        <label><input placeholder='Введите число кругов' type="number" value="5" id="polevv"></label><br>
-        <button onclick="kz()">Красное/зелёное</button><br><br>
-        <div id="KZ"></div>
+        <label><input placeholder='Введите число кругов' type="number" value="5" id="polevv"></label>
+        <button onclick="red_green()">Красное/зелёное</button><br><br>
+        <div id="RG"></div><br>
 
         <button onclick="table()">Таблица умножения на 31</button><br><br>
         <div id="ty"></div>
