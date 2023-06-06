@@ -34,6 +34,13 @@
             text-align: center;
             background-color: #c5bbe8;
         }
+        #time {
+            position: absolute;
+            top: 7px;
+            right: 10px;
+            color: #671f6b;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body onload="showDate()">
@@ -50,13 +57,16 @@
         <div id="current-date5"></div><br>
 
         <div>
-            <label>Дата рождения: <input type="date" class="HB"></label>
+            <label><b>Дата рождения: </b><input type="date" class="HB"></label>
         </div><br>
+
         <div>
             <button onclick="showDateCount()" class='knopka'><b>Показать число дней</b></button>
         </div><br>
+
         <div id="DaysHB"></div><br>
         <div>
+            
             <button onclick="DeleteD()" class='knopka2'>Очистить</button>
         </div>
     </main>
