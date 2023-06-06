@@ -12,13 +12,10 @@
             /* Автоматически заполняем на всю ширину grid-контейнера */
             grid-template-columns: repeat(auto-fill, 50px);
         }
-
-        .pusto {
-            height: 60px;
-        }
     </style>
     <script>
-        function addBlocks() {
+
+        function addBlocks() { /*Функция для выведения 10-ти блоков*/
             let blocks = document.getElementById('blocks');
             for (let i = 0; i < 10; i++) {
                 let block = document.createElement('div');
@@ -26,7 +23,8 @@
                 blocks.appendChild(block);
             }
         }
-        function showExchange() {
+        
+        function showExchange() { /*Функция для курса доллара*/
             let exchange = [70.5174, 70.1217, 70.0414, 70.3847, 70.5991,
                             70.8924, 71.5763, 72.8949, 72.7923, 73.6307];
             let table = document.getElementById('dollar-exchange');
@@ -37,43 +35,16 @@
                 tr.appendChild(td);
                 table.appendChild(tr);
             }
-            let sum = 0;
+
+            let sum = 0; /*Проссуммировали все значения и разделили на количество*/
             for (let i = 0; i < exchange.length; i++) {
                 sum = sum + exchange[i];
             }
             let average = sum / exchange.length;
             document.getElementById('detail').innerHTML = 'Среднее значение: ' + average;
         }
-        function addTransparentBlocks() {
-            let pblocks = document.getElementById('transparent-blocks');
-            for (let i = 0; i < 10; i++) {
-                let pblock = document.createElement('div');
-                pblock.innerHTML = 'Блок №' + (i + 1);
-                pblock.style.opacity = (i/10) + 0.1;
-                pblocks.appendChild(pblock);
-            }
-        }
-        function kz() {
-            let KZ = document.getElementById('KZ');
-            let krugi = parseInt(document.getElementById('polevv').value);
-            for(let i = krugi - 1; i >= 0; i = i - 1) {
-                let krug = document.createElement('div');
-                krug.innerHTML = krugi;
-                if (krugi % 2 != 0)
-                {
-                    krug.style.border = "2px solid red";
-                }
-                else
-                {
-                    krug.style.border = "2px solid green";
-                }
-                krug.style.borderRadius = "30px";
-                krug.style.width = "20px";
-                krug.style.margin = "5px";
-                krug.style.padding = "10px";
-                KZ.appendChild(krug);
-                krugi -= 1;
-            }
+
+
         }
         function table() {
             let ty = document.getElementById('ty');
@@ -120,7 +91,41 @@
     <header>
         НГТУ, ФБ, Лабораторная работа 7
     </header>
+    <main>
+        <button onclick="addBlocks()">Создать блоки</button><br><br>
 
+        <div id="blocks"></div>
+
+        <button onclick="showExchange()">Курс доллара</button><br><br>
+
+        <table border="1" id="dollar-exchange"></table>
+
+        <div id="detail"></div>
+
+        <button onclick="addTransparentBlocks()">Создать полупрозрачные блоки</button><br><br>
+
+        <div id="transparent-blocks"></div>
+
+        <label><input placeholder='Введите число кругов' type="number" value="5" id="polevv"></label><br>
+
+        <button onclick="kz()">Красное/зелёное</button><br><br>
+
+        <div id="KZ"></div>
+
+        <button onclick="table()">Таблица умножения на 31</button><br><br>
+
+        <div id="ty"></div>
+        
+        <button onclick="OZON()">Курс акций Ozon</button>
+
+        <table border="1" id="akcii"></table>
+
+        <div id="CA"></div>
+
+        <div id="CA1"></div>
+
+        <div id="CA2"></div><br><br>
+    </main>
 
     <footer>
         &copy; Елизавета Якунина, ФБИ-14, 2 курс, 2023
