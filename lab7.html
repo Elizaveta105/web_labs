@@ -44,15 +44,16 @@
             document.getElementById('detail').innerHTML = 'Среднее значение: ' + average;
         }
 
-
-        }
-        function table() {
-            let ty = document.getElementById('ty');
-            for (let i = 12; i < 33; i++) {
-                let tbym = document.createElement('div');
-                tbym.innerHTML = (i+1) + ' * ' +  '31 ' + '= ' + (i + 1) * 31;
-                ty.appendChild(tbym);
+        function addTransparentBlocks() { /*10 блоков с возрастающим значением opacity*/
+            let pblocks = document.getElementById('transparent-blocks');
+            for (let i = 0; i < 10; i++) {
+                let pblock = document.createElement('div');
+                pblock.innerHTML = 'Блок №' + (i + 1);
+                pblock.style.opacity = (i/10) + 0.1;
+                pblocks.appendChild(pblock);
             }
+        }
+ 
         }
         function OZON() {
             let data = ['11.05.2023', '12.05.2023', '15.05.2023', '16.05.2023', '17.05.2023',
@@ -93,31 +94,23 @@
     </header>
     <main>
         <button onclick="addBlocks()">Создать блоки</button><br><br>
-
         <div id="blocks"></div>
 
         <button onclick="showExchange()">Курс доллара</button><br><br>
-
         <table border="1" id="dollar-exchange"></table>
-
         <div id="detail"></div>
 
         <button onclick="addTransparentBlocks()">Создать полупрозрачные блоки</button><br><br>
-
         <div id="transparent-blocks"></div>
 
         <label><input placeholder='Введите число кругов' type="number" value="5" id="polevv"></label><br>
-
         <button onclick="kz()">Красное/зелёное</button><br><br>
-
         <div id="KZ"></div>
 
         <button onclick="table()">Таблица умножения на 31</button><br><br>
-
         <div id="ty"></div>
         
         <button onclick="OZON()">Курс акций Ozon</button>
-
         <table border="1" id="akcii"></table>
 
         <div id="CA"></div>
